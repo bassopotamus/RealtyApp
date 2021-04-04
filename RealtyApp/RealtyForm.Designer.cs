@@ -1,7 +1,7 @@
 ﻿
 namespace RealtyApp
 {
-    partial class Form1
+    partial class RealtyForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -50,6 +50,8 @@ namespace RealtyApp
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.livHouses = new System.Windows.Forms.ListView();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -117,7 +119,7 @@ namespace RealtyApp
             // 
             this.rtbNotes.Enabled = false;
             this.rtbNotes.Location = new System.Drawing.Point(290, 310);
-            this.rtbNotes.MaxLength = 500;
+            this.rtbNotes.MaxLength = 20000;
             this.rtbNotes.Name = "rtbNotes";
             this.rtbNotes.Size = new System.Drawing.Size(236, 192);
             this.rtbNotes.TabIndex = 7;
@@ -207,10 +209,11 @@ namespace RealtyApp
             // 
             this.btnEdit.Location = new System.Drawing.Point(12, 251);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(88, 35);
+            this.btnEdit.Size = new System.Drawing.Size(90, 35);
             this.btnEdit.TabIndex = 17;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnPrevious
             // 
@@ -240,11 +243,35 @@ namespace RealtyApp
             this.livHouses.UseCompatibleStateImageBehavior = false;
             this.livHouses.View = System.Windows.Forms.View.List;
             // 
-            // Form1
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(194, 251);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 35);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(103, 251);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(90, 35);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // RealtyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 511);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.livHouses);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
@@ -266,7 +293,7 @@ namespace RealtyApp
             this.Controls.Add(this.txtAddress2);
             this.Controls.Add(this.txtAddress1);
             this.Controls.Add(this.richTextBox1);
-            this.Name = "Form1";
+            this.Name = "RealtyForm";
             this.Text = "Dean Realty Helper that Helps Realtors";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -297,6 +324,8 @@ namespace RealtyApp
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.ListView livHouses;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 
