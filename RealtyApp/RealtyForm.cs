@@ -18,16 +18,28 @@ namespace RealtyApp
         {
             InitializeComponent();
 
-            
+            CreateMenuFunctionality();
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        /*private void Form1_Load(object sender, EventArgs e)
         {
-            livHouses.Items.Add("Name");
-            livHouses.Items.Add("Words");
-            livHouses.Items.Add("Name");
-            livHouses.Items.Add("Words");
+            
+        }*/
+
+        private void CreateMenuFunctionality()
+        {
+            Exit.Click += new System.EventHandler(this.Exit_Click);
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void Load_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -73,6 +85,16 @@ namespace RealtyApp
             btnEdit.Visible = true;
             btnCancel.Visible = false;
             btnSave.Visible = false;
+        }
+
+        private void RealtyForm_Load(object sender, EventArgs e)
+        {
+            livHouses.Items.Add("Name");
+            livHouses.Items.Add("Words");
+            livHouses.Items.Add("Name");
+            livHouses.Items.Add("Words");
+
+            
         }
     }
 }

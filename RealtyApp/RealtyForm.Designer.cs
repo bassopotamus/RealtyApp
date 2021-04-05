@@ -52,6 +52,14 @@ namespace RealtyApp
             this.livHouses = new System.Windows.Forms.ListView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.Menu = new System.Windows.Forms.MenuStrip();
+            this.Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadProperty = new System.Windows.Forms.ToolStripMenuItem();
+            this.Previous = new System.Windows.Forms.ToolStripMenuItem();
+            this.Next = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddProperty = new System.Windows.Forms.Button();
+            this.btnDeleteProperty = new System.Windows.Forms.Button();
+            this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -60,7 +68,7 @@ namespace RealtyApp
             this.richTextBox1.Font = new System.Drawing.Font("Permanent Marker", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.richTextBox1.Location = new System.Drawing.Point(12, 292);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(272, 210);
+            this.richTextBox1.Size = new System.Drawing.Size(514, 248);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "This is where a map would go if DotNetBrowser allowed for a free trial greater th" +
     "an 30 days.";
@@ -118,10 +126,10 @@ namespace RealtyApp
             // rtbNotes
             // 
             this.rtbNotes.Enabled = false;
-            this.rtbNotes.Location = new System.Drawing.Point(290, 310);
+            this.rtbNotes.Location = new System.Drawing.Point(290, 152);
             this.rtbNotes.MaxLength = 20000;
             this.rtbNotes.Name = "rtbNotes";
-            this.rtbNotes.Size = new System.Drawing.Size(236, 192);
+            this.rtbNotes.Size = new System.Drawing.Size(236, 134);
             this.rtbNotes.TabIndex = 7;
             this.rtbNotes.Text = "";
             // 
@@ -199,7 +207,7 @@ namespace RealtyApp
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(290, 292);
+            this.lblNotes.Location = new System.Drawing.Point(290, 134);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(38, 15);
             this.lblNotes.TabIndex = 16;
@@ -217,28 +225,28 @@ namespace RealtyApp
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(206, 12);
+            this.btnPrevious.Location = new System.Drawing.Point(293, 40);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(35, 23);
+            this.btnPrevious.Size = new System.Drawing.Size(110, 35);
             this.btnPrevious.TabIndex = 19;
-            this.btnPrevious.Text = "<";
+            this.btnPrevious.Text = "< Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(247, 12);
+            this.btnNext.Location = new System.Drawing.Point(416, 40);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(35, 23);
+            this.btnNext.Size = new System.Drawing.Size(110, 35);
             this.btnNext.TabIndex = 20;
-            this.btnNext.Text = ">";
+            this.btnNext.Text = "Next >";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
             // livHouses
             // 
             this.livHouses.HideSelection = false;
-            this.livHouses.Location = new System.Drawing.Point(532, 12);
+            this.livHouses.Location = new System.Drawing.Point(532, 27);
             this.livHouses.Name = "livHouses";
-            this.livHouses.Size = new System.Drawing.Size(251, 490);
+            this.livHouses.Size = new System.Drawing.Size(251, 513);
             this.livHouses.TabIndex = 21;
             this.livHouses.UseCompatibleStateImageBehavior = false;
             this.livHouses.View = System.Windows.Forms.View.List;
@@ -265,11 +273,71 @@ namespace RealtyApp
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // Menu
+            // 
+            this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Exit,
+            this.LoadProperty,
+            this.Previous,
+            this.Next});
+            this.Menu.Location = new System.Drawing.Point(0, 0);
+            this.Menu.Name = "Menu";
+            this.Menu.Size = new System.Drawing.Size(795, 24);
+            this.Menu.TabIndex = 24;
+            this.Menu.Text = "Menu";
+            // 
+            // Exit
+            // 
+            this.Exit.Name = "Exit";
+            this.Exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.Exit.Size = new System.Drawing.Size(38, 20);
+            this.Exit.Text = "Exit";
+            // 
+            // LoadProperty
+            // 
+            this.LoadProperty.Name = "LoadProperty";
+            this.LoadProperty.Size = new System.Drawing.Size(45, 20);
+            this.LoadProperty.Text = "Load";
+            // 
+            // Previous
+            // 
+            this.Previous.Name = "Previous";
+            this.Previous.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.Previous.Size = new System.Drawing.Size(64, 20);
+            this.Previous.Text = "Previous";
+            // 
+            // Next
+            // 
+            this.Next.Name = "Next";
+            this.Next.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.Next.Size = new System.Drawing.Size(44, 20);
+            this.Next.Text = "Next";
+            // 
+            // btnAddProperty
+            // 
+            this.btnAddProperty.Location = new System.Drawing.Point(293, 86);
+            this.btnAddProperty.Name = "btnAddProperty";
+            this.btnAddProperty.Size = new System.Drawing.Size(110, 35);
+            this.btnAddProperty.TabIndex = 25;
+            this.btnAddProperty.Text = "Add Property";
+            this.btnAddProperty.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteProperty
+            // 
+            this.btnDeleteProperty.Location = new System.Drawing.Point(416, 86);
+            this.btnDeleteProperty.Name = "btnDeleteProperty";
+            this.btnDeleteProperty.Size = new System.Drawing.Size(110, 35);
+            this.btnDeleteProperty.TabIndex = 26;
+            this.btnDeleteProperty.Text = "Delete Property";
+            this.btnDeleteProperty.UseVisualStyleBackColor = true;
+            // 
             // RealtyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 511);
+            this.ClientSize = new System.Drawing.Size(795, 552);
+            this.Controls.Add(this.btnDeleteProperty);
+            this.Controls.Add(this.btnAddProperty);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.livHouses);
@@ -293,9 +361,13 @@ namespace RealtyApp
             this.Controls.Add(this.txtAddress2);
             this.Controls.Add(this.txtAddress1);
             this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Menu);
+            this.MainMenuStrip = this.Menu;
             this.Name = "RealtyForm";
-            this.Text = "Dean Realty Helper that Helps Realtors";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Dean Realty Helper that Helps Realtors by Dusty";
+            this.Load += new System.EventHandler(this.RealtyForm_Load);
+            this.Menu.ResumeLayout(false);
+            this.Menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,6 +398,13 @@ namespace RealtyApp
         private System.Windows.Forms.ListView livHouses;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.MenuStrip Menu;
+        private System.Windows.Forms.ToolStripMenuItem Exit;
+        private System.Windows.Forms.ToolStripMenuItem Previous;
+        private System.Windows.Forms.ToolStripMenuItem Next;
+        private System.Windows.Forms.Button btnAddProperty;
+        private System.Windows.Forms.Button btnDeleteProperty;
+        private System.Windows.Forms.ToolStripMenuItem LoadProperty;
     }
 }
 
