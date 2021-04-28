@@ -54,11 +54,14 @@ namespace RealtyApp
             this.btnCancel = new System.Windows.Forms.Button();
             this.Menu = new System.Windows.Forms.MenuStrip();
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.LoadProperty = new System.Windows.Forms.ToolStripMenuItem();
             this.Previous = new System.Windows.Forms.ToolStripMenuItem();
             this.Next = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddProperty = new System.Windows.Forms.Button();
             this.btnDeleteProperty = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lblEnterID = new System.Windows.Forms.Label();
+            this.lblIDError = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +69,7 @@ namespace RealtyApp
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.richTextBox1.Font = new System.Drawing.Font("Permanent Marker", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox1.Location = new System.Drawing.Point(12, 292);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 330);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(514, 248);
             this.richTextBox1.TabIndex = 0;
@@ -76,7 +79,7 @@ namespace RealtyApp
             // txtAddress1
             // 
             this.txtAddress1.Enabled = false;
-            this.txtAddress1.Location = new System.Drawing.Point(12, 41);
+            this.txtAddress1.Location = new System.Drawing.Point(12, 79);
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(272, 23);
             this.txtAddress1.TabIndex = 1;
@@ -84,7 +87,7 @@ namespace RealtyApp
             // txtAddress2
             // 
             this.txtAddress2.Enabled = false;
-            this.txtAddress2.Location = new System.Drawing.Point(12, 86);
+            this.txtAddress2.Location = new System.Drawing.Point(12, 124);
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(272, 23);
             this.txtAddress2.TabIndex = 2;
@@ -92,7 +95,7 @@ namespace RealtyApp
             // txtCity
             // 
             this.txtCity.Enabled = false;
-            this.txtCity.Location = new System.Drawing.Point(12, 131);
+            this.txtCity.Location = new System.Drawing.Point(12, 169);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(167, 23);
             this.txtCity.TabIndex = 3;
@@ -100,7 +103,7 @@ namespace RealtyApp
             // txtState
             // 
             this.txtState.Enabled = false;
-            this.txtState.Location = new System.Drawing.Point(185, 131);
+            this.txtState.Location = new System.Drawing.Point(185, 169);
             this.txtState.MaxLength = 2;
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(27, 23);
@@ -109,7 +112,7 @@ namespace RealtyApp
             // txtZipCode
             // 
             this.txtZipCode.Enabled = false;
-            this.txtZipCode.Location = new System.Drawing.Point(218, 131);
+            this.txtZipCode.Location = new System.Drawing.Point(218, 169);
             this.txtZipCode.MaxLength = 10;
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Size = new System.Drawing.Size(66, 23);
@@ -118,7 +121,7 @@ namespace RealtyApp
             // txtStatus
             // 
             this.txtStatus.Enabled = false;
-            this.txtStatus.Location = new System.Drawing.Point(12, 178);
+            this.txtStatus.Location = new System.Drawing.Point(12, 216);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(272, 23);
             this.txtStatus.TabIndex = 6;
@@ -126,7 +129,7 @@ namespace RealtyApp
             // rtbNotes
             // 
             this.rtbNotes.Enabled = false;
-            this.rtbNotes.Location = new System.Drawing.Point(290, 152);
+            this.rtbNotes.Location = new System.Drawing.Point(290, 190);
             this.rtbNotes.MaxLength = 20000;
             this.rtbNotes.Name = "rtbNotes";
             this.rtbNotes.Size = new System.Drawing.Size(236, 134);
@@ -136,7 +139,7 @@ namespace RealtyApp
             // txtRegion
             // 
             this.txtRegion.Enabled = false;
-            this.txtRegion.Location = new System.Drawing.Point(12, 222);
+            this.txtRegion.Location = new System.Drawing.Point(12, 260);
             this.txtRegion.Name = "txtRegion";
             this.txtRegion.Size = new System.Drawing.Size(272, 23);
             this.txtRegion.TabIndex = 8;
@@ -144,7 +147,7 @@ namespace RealtyApp
             // lblAddress1
             // 
             this.lblAddress1.AutoSize = true;
-            this.lblAddress1.Location = new System.Drawing.Point(12, 23);
+            this.lblAddress1.Location = new System.Drawing.Point(12, 61);
             this.lblAddress1.Name = "lblAddress1";
             this.lblAddress1.Size = new System.Drawing.Size(58, 15);
             this.lblAddress1.TabIndex = 9;
@@ -153,7 +156,7 @@ namespace RealtyApp
             // lblAddress2
             // 
             this.lblAddress2.AutoSize = true;
-            this.lblAddress2.Location = new System.Drawing.Point(12, 68);
+            this.lblAddress2.Location = new System.Drawing.Point(12, 106);
             this.lblAddress2.Name = "lblAddress2";
             this.lblAddress2.Size = new System.Drawing.Size(58, 15);
             this.lblAddress2.TabIndex = 10;
@@ -162,7 +165,7 @@ namespace RealtyApp
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(12, 113);
+            this.lblCity.Location = new System.Drawing.Point(12, 151);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(28, 15);
             this.lblCity.TabIndex = 11;
@@ -171,7 +174,7 @@ namespace RealtyApp
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(185, 113);
+            this.lblState.Location = new System.Drawing.Point(185, 151);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(33, 15);
             this.lblState.TabIndex = 12;
@@ -180,7 +183,7 @@ namespace RealtyApp
             // lblZip
             // 
             this.lblZip.AutoSize = true;
-            this.lblZip.Location = new System.Drawing.Point(218, 113);
+            this.lblZip.Location = new System.Drawing.Point(218, 151);
             this.lblZip.Name = "lblZip";
             this.lblZip.Size = new System.Drawing.Size(55, 15);
             this.lblZip.TabIndex = 13;
@@ -189,7 +192,7 @@ namespace RealtyApp
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(12, 160);
+            this.lblStatus.Location = new System.Drawing.Point(12, 198);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(39, 15);
             this.lblStatus.TabIndex = 14;
@@ -198,7 +201,7 @@ namespace RealtyApp
             // lblRegion
             // 
             this.lblRegion.AutoSize = true;
-            this.lblRegion.Location = new System.Drawing.Point(12, 204);
+            this.lblRegion.Location = new System.Drawing.Point(12, 242);
             this.lblRegion.Name = "lblRegion";
             this.lblRegion.Size = new System.Drawing.Size(44, 15);
             this.lblRegion.TabIndex = 15;
@@ -207,7 +210,7 @@ namespace RealtyApp
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(290, 134);
+            this.lblNotes.Location = new System.Drawing.Point(290, 172);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(38, 15);
             this.lblNotes.TabIndex = 16;
@@ -215,7 +218,7 @@ namespace RealtyApp
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(12, 251);
+            this.btnEdit.Location = new System.Drawing.Point(12, 289);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 35);
             this.btnEdit.TabIndex = 17;
@@ -225,7 +228,7 @@ namespace RealtyApp
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(293, 40);
+            this.btnPrevious.Location = new System.Drawing.Point(293, 78);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(110, 35);
             this.btnPrevious.TabIndex = 19;
@@ -234,7 +237,7 @@ namespace RealtyApp
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(416, 40);
+            this.btnNext.Location = new System.Drawing.Point(416, 78);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(110, 35);
             this.btnNext.TabIndex = 20;
@@ -244,16 +247,16 @@ namespace RealtyApp
             // livHouses
             // 
             this.livHouses.HideSelection = false;
-            this.livHouses.Location = new System.Drawing.Point(532, 27);
+            this.livHouses.Location = new System.Drawing.Point(532, 65);
             this.livHouses.Name = "livHouses";
-            this.livHouses.Size = new System.Drawing.Size(251, 513);
+            this.livHouses.Size = new System.Drawing.Size(398, 513);
             this.livHouses.TabIndex = 21;
             this.livHouses.UseCompatibleStateImageBehavior = false;
             this.livHouses.View = System.Windows.Forms.View.List;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(194, 251);
+            this.btnSave.Location = new System.Drawing.Point(194, 289);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 35);
             this.btnSave.TabIndex = 22;
@@ -264,7 +267,7 @@ namespace RealtyApp
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(103, 251);
+            this.btnCancel.Location = new System.Drawing.Point(103, 289);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 35);
             this.btnCancel.TabIndex = 23;
@@ -277,12 +280,11 @@ namespace RealtyApp
             // 
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Exit,
-            this.LoadProperty,
             this.Previous,
             this.Next});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(795, 24);
+            this.Menu.Size = new System.Drawing.Size(942, 24);
             this.Menu.TabIndex = 24;
             this.Menu.Text = "Menu";
             // 
@@ -292,12 +294,6 @@ namespace RealtyApp
             this.Exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.Exit.Size = new System.Drawing.Size(38, 20);
             this.Exit.Text = "Exit";
-            // 
-            // LoadProperty
-            // 
-            this.LoadProperty.Name = "LoadProperty";
-            this.LoadProperty.Size = new System.Drawing.Size(45, 20);
-            this.LoadProperty.Text = "Load";
             // 
             // Previous
             // 
@@ -315,7 +311,7 @@ namespace RealtyApp
             // 
             // btnAddProperty
             // 
-            this.btnAddProperty.Location = new System.Drawing.Point(293, 86);
+            this.btnAddProperty.Location = new System.Drawing.Point(293, 124);
             this.btnAddProperty.Name = "btnAddProperty";
             this.btnAddProperty.Size = new System.Drawing.Size(110, 35);
             this.btnAddProperty.TabIndex = 25;
@@ -324,18 +320,60 @@ namespace RealtyApp
             // 
             // btnDeleteProperty
             // 
-            this.btnDeleteProperty.Location = new System.Drawing.Point(416, 86);
+            this.btnDeleteProperty.Location = new System.Drawing.Point(416, 124);
             this.btnDeleteProperty.Name = "btnDeleteProperty";
             this.btnDeleteProperty.Size = new System.Drawing.Size(110, 35);
             this.btnDeleteProperty.TabIndex = 26;
             this.btnDeleteProperty.Text = "Delete Property";
             this.btnDeleteProperty.UseVisualStyleBackColor = true;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(132, 27);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 23);
+            this.txtSearch.TabIndex = 27;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_OnGotFocus);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(238, 27);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 23);
+            this.btnSearch.TabIndex = 28;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // lblEnterID
+            // 
+            this.lblEnterID.AutoSize = true;
+            this.lblEnterID.Location = new System.Drawing.Point(12, 30);
+            this.lblEnterID.Name = "lblEnterID";
+            this.lblEnterID.Size = new System.Drawing.Size(114, 15);
+            this.lblEnterID.TabIndex = 29;
+            this.lblEnterID.Text = "Search for Realtor ID";
+            // 
+            // lblIDError
+            // 
+            this.lblIDError.AutoSize = true;
+            this.lblIDError.ForeColor = System.Drawing.Color.Red;
+            this.lblIDError.Location = new System.Drawing.Point(132, 53);
+            this.lblIDError.Name = "lblIDError";
+            this.lblIDError.Size = new System.Drawing.Size(121, 15);
+            this.lblIDError.TabIndex = 30;
+            this.lblIDError.Text = "This ID does not exist.";
+            this.lblIDError.Visible = false;
+            // 
             // RealtyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 552);
+            this.ClientSize = new System.Drawing.Size(942, 581);
+            this.Controls.Add(this.lblIDError);
+            this.Controls.Add(this.lblEnterID);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDeleteProperty);
             this.Controls.Add(this.btnAddProperty);
             this.Controls.Add(this.btnCancel);
@@ -404,7 +442,10 @@ namespace RealtyApp
         private System.Windows.Forms.ToolStripMenuItem Next;
         private System.Windows.Forms.Button btnAddProperty;
         private System.Windows.Forms.Button btnDeleteProperty;
-        private System.Windows.Forms.ToolStripMenuItem LoadProperty;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblEnterID;
+        private System.Windows.Forms.Label lblIDError;
     }
 }
 
