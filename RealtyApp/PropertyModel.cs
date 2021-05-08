@@ -6,6 +6,7 @@ namespace RealtyApp
 {
     class PropertyModel
     {
+        public int propID { get; set; }
         public string address1 { get; set; }
         public string address2 { get; set; }
         public string city { get; set; }

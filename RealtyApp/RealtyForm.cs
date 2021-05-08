@@ -36,15 +36,6 @@ namespace RealtyApp
             System.Windows.Forms.Application.Exit();
         }
 
-        private void LoadProperty_Click(object sender, EventArgs e)
-        {
-            RealtorIDSearch realtorSearch = new RealtorIDSearch();
-
-            realtorSearch.Show();
-            realtorSearch.BringToFront();
-
-        }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             txtAddress1.Enabled = true;
@@ -94,6 +85,7 @@ namespace RealtyApp
         {
             livHouses.View = View.Details;
             livHouses.Columns.Add("Address", 150);
+            livHouses.Columns.Add("Address 2", 100);
             livHouses.Columns.Add("City", 110);
             livHouses.Columns.Add("State", 50);
             livHouses.Columns.Add("Zip", 70);
@@ -168,6 +160,7 @@ namespace RealtyApp
 
                     PropertyModel nextPropertyModel = new PropertyModel
                     {
+                        propID = dataReader.GetInt32(0),
                         address1 = dataReader.GetString(1),
                         address2 = setAddress2,
                         city = dataReader.GetString(3),
@@ -194,12 +187,14 @@ namespace RealtyApp
             foreach (var house in propertyList)
             {
                 ListViewItem addItem;
-                string[] itemArray = new string[4];
+                string[] itemArray = new string[6];
 
                 itemArray[0] = house.address1;
-                itemArray[1] = house.city;
-                itemArray[2] = house.state;
-                itemArray[3] = house.zip;
+                itemArray[1] = house.address2;
+                itemArray[2] = house.city;
+                itemArray[3] = house.state;
+                itemArray[4] = house.zip;
+                itemArray[5] = house.propID.ToString();
 
                 addItem = new ListViewItem(itemArray);
 
@@ -208,5 +203,27 @@ namespace RealtyApp
 
         }
 
+        private void livHouses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (livHouses.SelectedIndices.Count > 0){
+                int propIndex = Convert.ToInt32(livHouses.SelectedIndices[0]);
+                ChangeFullInfo(propIndex);
+
+            }
+
+        }
+
+        private void ChangeFullInfo(int propertyID)
+        {
+            txtAddress1.Text = propertyModelList[propertyID].address1;
+            txtAddress2.Text = propertyModelList[propertyID].address2;
+            txtCity.Text = propertyModelList[propertyID].city;
+            txtState.Text = propertyModelList[propertyID].state;
+            txtZipCode.Text = propertyModelList[propertyID].zip;
+            txtStatus.Text = propertyModelList[propertyID].status;
+            txtRegion.Text = propertyModelList[propertyID].region;
+            rtbNotes.Text = propertyModelList[propertyID].notes;
+
+        }
     }
 }

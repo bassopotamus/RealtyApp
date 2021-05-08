@@ -246,13 +246,16 @@ namespace RealtyApp
             // 
             // livHouses
             // 
+            this.livHouses.FullRowSelect = true;
             this.livHouses.HideSelection = false;
             this.livHouses.Location = new System.Drawing.Point(532, 65);
+            this.livHouses.MultiSelect = false;
             this.livHouses.Name = "livHouses";
             this.livHouses.Size = new System.Drawing.Size(398, 513);
             this.livHouses.TabIndex = 21;
             this.livHouses.UseCompatibleStateImageBehavior = false;
             this.livHouses.View = System.Windows.Forms.View.List;
+            this.livHouses.SelectedIndexChanged += new System.EventHandler(this.livHouses_SelectedIndexChanged);
             // 
             // btnSave
             // 
